@@ -21,6 +21,7 @@ const translations = {
     letsStart: 'Let\'s Start',
     
     // Dashboard Cards
+    whoIsFarming: 'Who is farming today?',
     guide: 'Guide',
     cropDiseases: 'Crop Diseases',
     cropPrices: 'Crop Prices',
@@ -66,6 +67,7 @@ const translations = {
     letsStart: 'தொடங்குவோம்',
     
     // Dashboard Cards
+    whoIsFarming: 'இன்று யார் விவசாயம் செய்கிறார்கள்?',
     guide: 'வழிகாட்டி',
     cropDiseases: 'பயிர் நோய்கள்',
     cropPrices: 'பயிர் விலைகள்',

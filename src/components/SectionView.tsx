@@ -62,9 +62,11 @@ const SectionView: React.FC<SectionViewProps> = ({ section, onBack }) => {
           <Button
             onClick={onBack}
             variant="ghost"
-            className={`${buttonClasses[section]} text-white hover:scale-105 transition-transform rounded-full px-4`}
+            className={`${buttonClasses[section]} text-white group
+                       transform transition-all duration-300 hover:scale-105 hover:shadow-lg
+                       hover:-translate-x-1 active:scale-95 rounded-full px-4`}
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
             {t('back')}
           </Button>
           
@@ -86,8 +88,10 @@ const SectionView: React.FC<SectionViewProps> = ({ section, onBack }) => {
         </div>
 
         {/* Chat Input */}
-        <div className="max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <ChatInput theme={section} />
+        <div className="flex justify-center">
+          <div className="w-full max-w-2xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <ChatInput theme={section} />
+          </div>
         </div>
       </div>
     </div>

@@ -39,17 +39,22 @@ const Dashboard: React.FC<DashboardProps> = ({ onCardClick }) => {
   ];
 
   return (
-    <div className="flex-1 flex items-center justify-center p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl w-full animate-slide-up">
-        {cards.map((card, index) => (
-          <DashboardCard
-            key={card.section}
-            icon={card.icon}
-            title={card.title}
-            theme={card.theme}
-            onClick={() => onCardClick(card.section)}
-          />
-        ))}
+    <div className="flex-1 flex items-center justify-center p-8">
+      <div className="w-full max-w-4xl">
+        <h2 className="text-2xl font-bold text-center text-white mb-8">
+          {t('whoIsFarming')}
+        </h2>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center animate-slide-up">
+          {cards.map((card, index) => (
+            <DashboardCard
+              key={card.section}
+              icon={card.icon}
+              title={card.title}
+              theme={card.theme}
+              onClick={() => onCardClick(card.section)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
