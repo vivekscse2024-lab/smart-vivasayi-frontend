@@ -2,39 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Smart Vivasayi Design System - Green themed farming app
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Green farming theme */
+    --background: 120 100% 97%;
+    --foreground: 140 60% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 140 60% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 140 60% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 135 70% 35%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 120 40% 85%;
+    --secondary-foreground: 140 60% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 30% 90%;
+    --muted-foreground: 140 30% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 150 80% 45%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 20% 80%;
+    --input: 120 20% 90%;
+    --ring: 135 70% 35%;
+
+    /* Custom farming app colors */
+    --farming-green: 135 70% 35%;
+    --farming-light-green: 120 60% 85%;
+    --farming-dark-green: 140 80% 25%;
+    
+    /* Card theme colors */
+    --guide-color: 180 100% 35%;        /* Teal */
+    --disease-color: 25 100% 55%;       /* Orange */
+    --price-color: 45 100% 50%;         /* Gold */
+    --scheme-color: 235 85% 55%;        /* Indigo */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--farming-green)), hsl(var(--accent)));
+    --gradient-background: linear-gradient(180deg, hsl(120 80% 90%), hsl(135 70% 95%));
+    --gradient-card: linear-gradient(145deg, hsla(0, 0%, 100%, 0.25), hsla(0, 0%, 100%, 0.1));
+    
+    /* Glassmorphism */
+    --glass-bg: hsla(0, 0%, 100%, 0.25);
+    --glass-border: hsla(0, 0%, 100%, 0.3);
+    --glass-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -100,6 +126,100 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card effect */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Animation classes */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    transition: var(--transition-spring);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.15);
+  }
+}
+
+@layer utilities {
+  /* Custom gradient backgrounds */
+  .bg-farming-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .bg-page-gradient {
+    background: var(--gradient-background);
+  }
+
+  /* Theme colors for cards */
+  .theme-guide {
+    --theme-color: var(--guide-color);
+  }
+
+  .theme-disease {
+    --theme-color: var(--disease-color);
+  }
+
+  .theme-price {
+    --theme-color: var(--price-color);
+  }
+
+  .theme-scheme {
+    --theme-color: var(--scheme-color);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

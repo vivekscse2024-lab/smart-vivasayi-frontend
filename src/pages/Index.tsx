@@ -1,13 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useState } from 'react';
+import { LanguageProvider } from '../components/LanguageContext';
+import Header from '../components/Header';
+import WelcomeModal from '../components/WelcomeModal';
+import Dashboard from '../components/Dashboard';
+import SectionView, { SectionType } from '../components/SectionView';
 
 const Index = () => {
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [currentSection, setCurrentSection] = useState<SectionType>(null);
+
+  const handleStart = () => {
+    setShowWelcome(false);
+  };
+
+  const handleCardClick = (section: SectionType) => {
+    setCurrentSection(section);
+  };
+
+  const handleBack = () => {
+    setCurrentSection(null);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <LanguageProvider>
+      <div className="min-h-screen bg-page-gradient flex flex-col">
+        <Header />
+        
+        {currentSection ? (
+          <SectionView section={currentSection} onBack={handleBack} />
+        ) : (
+          <Dashboard onCardClick={handleCardClick} />
+        )}
+        
+        <WelcomeModal isOpen={showWelcome} onStart={handleStart} />
       </div>
-    </div>
+    </LanguageProvider>
   );
 };
 

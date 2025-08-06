@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +64,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom farming app colors
+				farming: {
+					green: 'hsl(var(--farming-green))',
+					'light-green': 'hsl(var(--farming-light-green))',
+					'dark-green': 'hsl(var(--farming-dark-green))',
+				},
+				guide: 'hsl(var(--guide-color))',
+				disease: 'hsl(var(--disease-color))',
+				price: 'hsl(var(--price-color))',
+				scheme: 'hsl(var(--scheme-color))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
