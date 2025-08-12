@@ -223,3 +223,77 @@ All colors MUST be HSL.
     opacity: 1;
   }
 }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes cardHover {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.05) translateY(-5px);
+  }
+}
+
+@keyframes tooltipSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* Floating elements */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  opacity: 0.1;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+.floating-element:nth-child(3) { top: 60%; left: 8%; animation-delay: 2s; }
+.floating-element:nth-child(4) { top: 70%; right: 15%; animation-delay: 3s; }
+.floating-element:nth-child(5) { top: 40%; left: 15%; animation-delay: 4s; }
+
+/* Enhanced card animations */
+.card-hover-effect {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  animation: cardHover 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.tooltip-animate {
+  animation: tooltipSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
