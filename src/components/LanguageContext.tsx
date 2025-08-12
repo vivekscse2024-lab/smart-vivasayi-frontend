@@ -56,6 +56,15 @@ const translations = {
     schemeTip1: 'Subsidy applications',
     schemeTip2: 'Loan schemes for farmers',
     schemeTip3: 'Insurance programs',
+    
+    // Farming insights
+    farmingInsights: 'Farming Insights & Innovation',
+    sustainableTitle: 'Sustainable Agriculture',
+    sustainableDesc: 'Implementing eco-friendly practices for long-term soil health and biodiversity preservation.',
+    modernTitle: 'Modern Technology',
+    modernDesc: 'Leveraging IoT, AI, and precision farming tools to optimize crop yields and resource usage.',
+    communityTitle: 'Community Support',
+    communityDesc: 'Building strong farmer networks for knowledge sharing and collective growth.',
   },
   ta: {
     // Header
@@ -102,6 +111,15 @@ const translations = {
     schemeTip1: 'மானியம் விண்ணப்பங்கள்',
     schemeTip2: 'விவசாயிகளுக்கான கடன் திட்டங்கள்',
     schemeTip3: 'காப்பீட்டு திட்டங்கள்',
+    
+    // Farming insights
+    farmingInsights: 'விவசாய நுண்ணறிவு மற்றும் புதுமை',
+    sustainableTitle: 'நிலையான வேளாண்மை',
+    sustainableDesc: 'நீண்டகால மண் ஆரோக்கியம் மற்றும் பல்லுயிர் பாதுகாப்பிற்கான சுற்றுச்சூழல் நட்பு நடைமுறைகள்.',
+    modernTitle: 'நவீன தொழில்நுட்பம்',
+    modernDesc: 'பயிர் விளைச்சல் மற்றும் வள பயன்பாட்டை மேம்படுத்த IoT, AI மற்றும் துல்லிய விவசாய கருவிகள்.',
+    communityTitle: 'சமூக ஆதரவு',
+    communityDesc: 'அறிவு பகிர்வு மற்றும் கூட்டு வளர்ச்சிக்கான வலுவான விவசாயி நெட்வொர்க்குகள்.',
   }
 };
 

@@ -39,7 +39,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onCardClick }) => {
   ];
 
   return (
-    <div className="flex-1 flex items-center justify-center p-8 relative">
+    <div className="flex-1 flex flex-col items-center justify-center p-8 relative min-h-screen">
       {/* Floating farming elements */}
       <div className="floating-elements">
         <div className="floating-element text-6xl">🌾</div>
@@ -49,17 +49,22 @@ const Dashboard: React.FC<DashboardProps> = ({ onCardClick }) => {
         <div className="floating-element text-4xl">🌽</div>
       </div>
       
-      {/* Background pattern */}
+      {/* Colorful background */}
       <div 
-        className="absolute inset-0 opacity-5 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/src/assets/farming-background.jpg')` }}
+        className="absolute inset-0 opacity-30 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/src/assets/colorful-farming-bg.jpg')` }}
       ></div>
       
-      <div className="w-full max-w-4xl relative z-10">
-        <h2 className="text-3xl font-bold text-center text-white mb-12 animate-fade-in">
+      {/* Main content */}
+      <div className="w-full max-w-4xl relative z-10 flex-1 flex flex-col justify-center">
+        <h2 className="text-3xl font-bold text-center text-white mb-4 animate-fade-in">
           {t('whoIsFarming')}
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center animate-slide-up">
+        
+        {/* Separator line */}
+        <div className="separator-line"></div>
+        
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center animate-slide-up mt-8">
           {cards.map((card, index) => (
             <DashboardCard
               key={card.section}
@@ -69,6 +74,35 @@ const Dashboard: React.FC<DashboardProps> = ({ onCardClick }) => {
               onClick={() => onCardClick(card.section)}
             />
           ))}
+        </div>
+      </div>
+      
+      {/* Farming details section */}
+      <div className="w-full max-w-6xl relative z-10 mt-16 mb-8">
+        <div className="glass-card p-8 rounded-2xl border border-white/20">
+          <h3 className="text-2xl font-bold text-center text-white mb-6">
+            {t('farmingInsights')}
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white/90">
+            <div className="text-center">
+              <div className="text-4xl mb-3">🌍</div>
+              <h4 className="font-semibold mb-2 text-green-300">{t('sustainableTitle')}</h4>
+              <p className="text-sm">{t('sustainableDesc')}</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-4xl mb-3">📈</div>
+              <h4 className="font-semibold mb-2 text-blue-300">{t('modernTitle')}</h4>
+              <p className="text-sm">{t('modernDesc')}</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-4xl mb-3">🤝</div>
+              <h4 className="font-semibold mb-2 text-yellow-300">{t('communityTitle')}</h4>
+              <p className="text-sm">{t('communityDesc')}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
