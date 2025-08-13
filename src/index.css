@@ -246,12 +246,46 @@ All colors MUST be HSL.
   0% {
     transform: perspective(1000px) rotateY(0deg) scale(1);
   }
-  50% {
-    transform: perspective(1000px) rotateY(180deg) scale(1.1);
-  }
   100% {
-    transform: perspective(1000px) rotateY(360deg) scale(1.05);
+    transform: perspective(1000px) rotateY(180deg) scale(1.05);
   }
+}
+
+@keyframes headerPulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes logoSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes guideElements {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(2deg); }
+  75% { transform: translateY(5px) rotate(-2deg); }
+}
+
+@keyframes cropSway {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(3px) rotate(1deg); }
+}
+
+@keyframes moneyBounce {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.1); }
+}
+
+@keyframes governmentWave {
+  0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+  50% { transform: translateY(-3px) rotateZ(1deg); }
 }
 
 @keyframes tooltipSlide {
@@ -295,7 +329,117 @@ All colors MUST be HSL.
 }
 
 .card-flip-container:hover {
-  animation: cardFlip 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: cardFlip 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Header animations */
+.animate-header-pulse {
+  animation: headerPulse 3s ease-in-out infinite;
+}
+
+.animate-logo-spin {
+  animation: logoSpin 20s linear infinite;
+}
+
+/* Theme-specific background animations */
+.guide-bg-elements {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.guide-bg-elements::before {
+  content: '🧑‍🌾 🌱 🚜 🌾 📚';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: guideElements 3s ease-in-out infinite;
+  top: 20%;
+  left: 10%;
+}
+
+.guide-bg-elements::after {
+  content: '🌿 📖 🌾';
+  position: absolute;
+  font-size: 1.2rem;
+  animation: guideElements 3s ease-in-out infinite reverse;
+  bottom: 20%;
+  right: 15%;
+}
+
+.disease-bg-elements {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.disease-bg-elements::before {
+  content: '🌾 🐛 🔬 🍃';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: cropSway 2.5s ease-in-out infinite;
+  top: 25%;
+  left: 15%;
+}
+
+.disease-bg-elements::after {
+  content: '🌱 🔍';
+  position: absolute;
+  font-size: 1.2rem;
+  animation: cropSway 2.5s ease-in-out infinite reverse;
+  bottom: 25%;
+  right: 20%;
+}
+
+.price-bg-elements {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.price-bg-elements::before {
+  content: '💰 📈 💵 📊';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: moneyBounce 2s ease-in-out infinite;
+  top: 20%;
+  left: 10%;
+}
+
+.price-bg-elements::after {
+  content: '💳 📉';
+  position: absolute;
+  font-size: 1.2rem;
+  animation: moneyBounce 2s ease-in-out infinite reverse;
+  bottom: 20%;
+  right: 15%;
+}
+
+.scheme-bg-elements {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.scheme-bg-elements::before {
+  content: '🏛️ 📜 🤝 📋';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: governmentWave 4s ease-in-out infinite;
+  top: 25%;
+  left: 15%;
+}
+
+.scheme-bg-elements::after {
+  content: '📄 ⚖️';
+  position: absolute;
+  font-size: 1.2rem;
+  animation: governmentWave 4s ease-in-out infinite reverse;
+  bottom: 25%;
+  right: 20%;
 }
 
 .card-face {

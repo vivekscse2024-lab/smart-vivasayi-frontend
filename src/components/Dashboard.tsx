@@ -57,7 +57,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onCardClick }) => {
       
       {/* Main content */}
       <div className="w-full max-w-4xl relative z-10 flex-1 flex flex-col justify-center">
-        <h2 className="text-3xl font-bold text-center text-white mb-4 animate-fade-in">
+        <h2 className="text-3xl font-bold text-center text-white mb-8 animate-fade-in -mt-16">
           {t('whoIsFarming')}
         </h2>
         
@@ -87,13 +87,13 @@ const Dashboard: React.FC<DashboardProps> = ({ onCardClick }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white/90">
             <div className="text-center">
               <div className="text-4xl mb-3">🌍</div>
-              <h4 className="font-semibold mb-2 text-green-300">{t('sustainableTitle')}</h4>
+              <h4 className="font-semibold mb-2 text-orange-400 font-serif">{t('sustainableTitle')}</h4>
               <p className="text-sm">{t('sustainableDesc')}</p>
             </div>
             
             <div className="text-center">
               <div className="text-4xl mb-3">📈</div>
-              <h4 className="font-semibold mb-2 text-blue-300">{t('modernTitle')}</h4>
+              <h4 className="font-semibold mb-2 text-purple-400 font-serif">{t('modernTitle')}</h4>
               <p className="text-sm">{t('modernDesc')}</p>
             </div>
             

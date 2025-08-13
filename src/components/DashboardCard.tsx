@@ -50,6 +50,9 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ icon, title, theme, onCli
         animate-scale-in
       `}
       onClick={onClick}>
+        {/* Theme-specific background animations */}
+        <div className={`${theme}-bg-elements`}></div>
+        
         {/* Gradient overlay */}
         <div className={`absolute inset-0 bg-gradient-to-br ${
           theme === 'guide' ? 'from-guide/10 to-guide/25' :
